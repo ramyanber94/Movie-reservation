@@ -1,0 +1,26 @@
+<mat-grid-list cols="4" rowHeight="1:1">
+    <div *ngFor="let movie of movies">
+        <mat-grid-tile>
+            <mat-card class="example-card" (click)="showMovieDetails(movie)">
+                <mat-card-header>
+                    <div>
+                        <mat-card-title>{{movie.title}}</mat-card-title>
+                    </div>
+                </mat-card-header>
+                <img mat-card-image src="http://image.tmdb.org/t/p/w500/{{movie['backdrop_path']}}"
+                    alt="Photo of a Shiba Inu">
+                <mat-card-content>
+                    <p>{{movie.overview}}</p>
+                </mat-card-content>
+            </mat-card>
+        </mat-grid-tile>
+    </div>
+</mat-grid-list>
+<div class="leftAndright">
+    <button mat-icon-button class="buttonArrowBack" (click)="goBack()">
+        <mat-icon>arrow_back</mat-icon>
+    </button>
+    <button mat-icon-button class="buttonArrowForward" (click)="goNext()">
+        <mat-icon>arrow_forward</mat-icon>
+    </button>
+</div>
